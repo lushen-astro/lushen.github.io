@@ -5,6 +5,11 @@ title = 'Lu Shen'
 theme = ["barks", "hugo-embed-pdf-shortcode"]
 enableInlineShortcodes = true
 
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+
 # Main menu
 [[menu.main]]
     name = "About"
@@ -31,7 +36,7 @@ enableInlineShortcodes = true
 
     [params.head]
         author = "Lu Shen"
-        custom_css = "/custom.css"
+        custom_css = "/custom.css?v=profile-layout"
         description = "Hi, I'm Lu Shen"
         keywords = ["astronomy", "galaxy evolution", "environmental effect", "clusters", "protoclusters"]
 
