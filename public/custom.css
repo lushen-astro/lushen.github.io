@@ -1,0 +1,205 @@
+body {
+  line-height: 1.65;
+}
+
+body:has(.landing-page-wrapper) header,
+body:has(.landing-page-wrapper) > .outer > .middle > .inner > nav {
+  display: none;
+}
+
+.inner {
+  width: min(1040px, calc(100vw - 4rem));
+  max-width: 1040px;
+}
+
+main,
+.content {
+  max-width: 1040px;
+}
+
+.landing-page-wrapper {
+  display: block;
+}
+
+.landing-page-content {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.landing-page-wrapper > .landing-page-image {
+  display: none;
+}
+
+.landing-page-content > div {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: 2.75rem;
+  align-items: start;
+}
+
+.landing-page-content > div > :not(.profile-sidebar) {
+  grid-column: 2;
+}
+
+.profile-sidebar {
+  grid-column: 1;
+  grid-row: 1 / span 8;
+  position: sticky;
+  top: 2rem;
+  padding: 0;
+  text-align: left;
+}
+
+.profile-sidebar img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 4px;
+  box-shadow: 0 10px 28px rgba(51, 51, 51, 0.12);
+}
+
+.profile-sidebar h1 {
+  margin: 1rem 0 0;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.profile-sidebar p {
+  margin: 0.4rem 0 0.85rem;
+  color: rgba(51, 51, 51, 0.74);
+  line-height: 1.35;
+}
+
+.profile-sidebar nav {
+  margin: 0;
+  text-align: left;
+}
+
+.profile-sidebar nav a {
+  display: inline-block;
+  margin-right: 1.1rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin-top: 0.25em;
+  margin-bottom: 0.2em;
+  font-size: 2.6rem;
+}
+
+h2 {
+  margin-top: 2.6em;
+  padding-top: 0.7em;
+  border-top: 1px solid rgba(51, 51, 51, 0.16);
+  text-align: left;
+  font-size: 1.45rem;
+}
+
+h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.25em;
+  font-size: 1.02rem;
+}
+
+.survey-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.1rem;
+  align-items: start;
+  margin: 0.25rem 0 0.2rem;
+}
+
+.survey-item {
+  min-width: 0;
+}
+
+.survey-item a {
+  display: block;
+  border-radius: 4px;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.survey-item a:hover,
+.survey-item a:focus {
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+
+.survey-item img {
+  width: 100%;
+  height: 118px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.survey-item p {
+  margin: 0.25rem 0 0;
+  color: rgba(51, 51, 51, 0.76);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+p {
+  margin-top: 0.65em;
+  margin-bottom: 0.95em;
+}
+
+.landing-page-content h1 + p {
+  max-width: 34rem;
+  font-size: 1.08rem;
+}
+
+.landing-page-content .profile-sidebar + p,
+.landing-page-content .profile-sidebar + p + p,
+.landing-page-content .profile-sidebar + p + p + p {
+  max-width: 39rem;
+  margin-top: 0.35em;
+  margin-bottom: 0.45em;
+}
+
+.landing-page-content .profile-sidebar + p {
+  margin-top: 0.25rem;
+}
+
+a {
+  text-underline-offset: 0.16em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.content,
+main {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .landing-page-wrapper {
+    display: block;
+  }
+
+  .landing-page-content > div {
+    display: block;
+  }
+
+  .profile-sidebar {
+    position: static;
+    margin: 1.75rem 0;
+  }
+
+  h1 {
+    font-size: 2.15rem;
+  }
+
+  h2 {
+    margin-top: 2.1em;
+  }
+
+  .survey-logo-grid {
+    grid-template-columns: 1fr;
+  }
+}
